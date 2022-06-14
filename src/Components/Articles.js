@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
+  const [loading, isLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -12,14 +13,16 @@ const Articles = () => {
       
         console.log(response.data.articles)
         setArticles(response.data.articles);
+        isLoading(false)
       })
       .catch((err) => {
         console.log(err);
       });
   },[]);
 
-
-
+  if (loading) {
+    return <p >Loading...</p>;
+  }
   return (
     <>
     <div className="articles">

@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const Article = () => {
     const [article, setArticle] = useState({});
+    const [loading, isLoading] = useState(true);
     const {id}= useParams()
   
 
@@ -14,6 +15,7 @@ const Article = () => {
       
         console.log(response.data)
         setArticle(response.data);
+        isLoading(false)
       })
       .catch((err) => {
         console.log(err);
@@ -21,6 +23,9 @@ const Article = () => {
   },[]);
 
 
+  if (loading) {
+    return <p >Loading...</p>;
+  }
   return (
     <>
     <div className='articleList'>
