@@ -1,0 +1,68 @@
+.header {
+    padding: 6px;
+    text-align: center;
+    background: #90cf07;
+    color: rgb(10, 5, 5);
+    font-size: 55px;
+  }
+
+  .search {
+    float: right;
+    display: block;
+    color: rgb(104, 8, 8);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+
+  }
+
+  .button  {
+    float: left;
+    display: block;
+    color: #400613;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .nav{
+    padding: 5px;
+    float: center;
+    background: #499d44;
+    font-size: 15px;
+    
+  }
+
+.listItem{
+  padding: 5px;
+  color: #21b5c0;
+  font-size: large;
+  background-color: #14adc5;
+  
+  
+}
+
+.articles{
+  display: flex;
+  flex-wrap: wrap;
+  background: #347938;
+ 
+}
+.article{
+  cursor: pointer;
+  width: 25%;
+  border: 1px solid black;
+  text-decoration: none;
+  color: black;
+  padding: 20px;
+}
+
+.articleList{
+  background: #a4c3c1;
+  color: rgb(11, 9, 17);
+  font-size: larger;
+
+}
+
