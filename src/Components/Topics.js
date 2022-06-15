@@ -9,32 +9,27 @@ const Topics = () => {
   useEffect(() => {
     axios("https://danialnews.herokuapp.com/api/topics")
       .then((response) => {
-      
-        console.log(response.data.topics)
         setTopics(response.data.topics);
-        isLoading(false)
+        isLoading(false);
       })
       .catch((err) => {
         console.log(err);
       });
-  },[]);
+  }, []);
 
   if (loading) {
-    return <p >Loading...</p>;
+    return <p>Loading...</p>;
   }
   return (
     <>
-     <div>
-      {
-      topics.map(article=>
-       <Link  to={'/topics'}>
-          
-            <div className="article" >{article.description}</div>
-
-       </Link>)
-      }
+      <div>
+        {topics.map((article) => (
+          <Link to={"/topics"}>
+            <div className="article">{article.description}</div>
+          </Link>
+        ))}
       </div>
     </>
-      )
-    }
-export default Topics
+  );
+};
+export default Topics;
