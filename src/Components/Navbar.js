@@ -1,6 +1,7 @@
 
 import {useEffect, useState} from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 const Navbar = () => {
 
@@ -19,9 +20,9 @@ const Navbar = () => {
       <ul className="nav d-flex justify-content-center  ">
 
         {
-           topics.map(item=> <li className='listItem' key={item.slug}><a href="#" className="nav-link px-2 text-secondary">
+           topics.map(item=> <Link to={`topics/${item.slug}`} className='listItem' key={item.slug}>
            {item.slug}
-         </a></li>)
+        </Link>)
         }  
           </ul>
     </nav>

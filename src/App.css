@@ -37,9 +37,10 @@
 
 .listItem{
   padding: 5px;
-  color: #21b5c0;
+  color: #d6550a;
   font-size: large;
-  background-color: #14adc5;
+  background-color: #f1f0f4;
+   
   
   
 }
@@ -50,6 +51,7 @@
   background: #347938;
  
 }
+
 .article{
   cursor: pointer;
   width: 25%;
@@ -65,4 +67,6 @@
   font-size: larger;
 
 }
+
+
 
