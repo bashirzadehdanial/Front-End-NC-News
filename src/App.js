@@ -6,8 +6,8 @@ import Articles from './Components/Articles';
 import Article from './Components/Article';
 import Topics from './Components/Topics';
 import CodingTopic from './Components/CodingTopic';
-import FootballTopic from './Components/Football';
-import CookingTopic from './Components/Cooking';
+import FootballTopic from './Components/FootballTopic';
+import CookingTopic from './Components/CookingTopic';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
