@@ -23,9 +23,9 @@ const Topics = () => {
   return (
     <>
       <div>
-        {topics.map((article) => (
-          <Link to={"/topics"}>
-            <div className="article">{article.description}</div>
+        {topics.map((article, index) => (
+          <Link to={`/topics/${article.slug}`}>
+            <div className="article" key={index}>{article.slug}</div>
           </Link>
         ))}
       </div>

@@ -1,17 +1,26 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link,  useLocation} from "react-router-dom";
+
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
   const [loading, isLoading] = useState(true);
-
+  const search = useLocation().search;
+  const topic = new URLSearchParams(search).get('topic');
+  let url;
   useEffect(() => {
+    if(topic){
+      url = `https://danialnews.herokuapp.com/api/articles?topic=${topic}`
+    }else{
+      url=`https://danialnews.herokuapp.com/api/articles`
+    }
+
     axios
-      ("https://danialnews.herokuapp.com/api/articles")
+      (url)
       .then((response) => {
       
-        console.log(response.data.articles)
+        
         setArticles(response.data.articles);
         isLoading(false)
       })
@@ -25,12 +34,12 @@ const Articles = () => {
   }
   return (
     <>
-    <div className="articles">
+    <div classtopic="articles">
       {
        articles.map(article=>
-       <Link className="article" to={`/articles/${article.article_id}`}>
-            <div className="articleList">Topic: {article.topic}</div><br/>
-            <div className="articleList">Article: {article.title}</div>
+       <Link classtopic="article" to={`/articles/${article.article_id}`}>
+            <div  classtopic="articleList">Topic: {article.topic}</div><br/>
+            <div classtopic="articleList">Article: {article.title}</div>
 
        </Link>)
       }

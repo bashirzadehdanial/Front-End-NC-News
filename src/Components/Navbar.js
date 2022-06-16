@@ -12,15 +12,16 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="nav">
-      <ul className="nav d-flex justify-content-center  ">
-        {topics.map((item) => (
-          <Link to={`/topics/${item.slug}`} className="listItem" key={item.slug}>
+    <div className="nav">
+      <div className="nav d-flex justify-content-center  ">
+        {topics.map((item,index) => (
+          <Link to={`/articles?topic=${item.slug}`} className="listItem">
             {item.slug}
-          </Link>
+            </Link>
         ))}
-      </ul>
-    </nav>
+      </div>
+    </div>
+    
   );
 };
 
