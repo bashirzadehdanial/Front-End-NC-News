@@ -35,7 +35,7 @@ const Article = () => {
         <div >Description: {article.body}</div>
         <div>Author: {article.author}</div>
         <div>Votes: {article.votes}</div>
-        <div>{article.created_at}</div>
+        <div>Created date: {article.created_at}</div>
     </div>
     </>
   )
