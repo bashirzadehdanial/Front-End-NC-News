@@ -8,7 +8,14 @@ const Articles = () => {
   const [loading, isLoading] = useState(true);
   const search = useLocation().search;
   const topic = new URLSearchParams(search).get('topic');
+  const [topicQuery, settopicQuery] = useState(null)
+
+
   let url;
+  useEffect(()=>{
+    settopicQuery(topic)
+  })
+  
   useEffect(() => {
     if(topic){
       url = `https://danialnews.herokuapp.com/api/articles?topic=${topic}`
@@ -27,7 +34,7 @@ const Articles = () => {
       .catch((err) => {
         console.log(err);
       });
-  },[]);
+  },[topicQuery]);
 
   if (loading) {
     return <p >Loading...</p>;

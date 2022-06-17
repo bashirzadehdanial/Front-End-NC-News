@@ -22,7 +22,7 @@ const Topics = () => {
   }
   return (
     <>
-      <div>
+      <div className="articlesList">
         {topics.map((article, index) => (
           <Link to={`/topics/${article.slug}`}>
             <div className="article" key={index}>{article.slug}</div>
