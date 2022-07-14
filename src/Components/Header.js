@@ -1,27 +1,29 @@
 import React from "react";
 
 
+
+
 const Header = () => {
   return (
     <header className="header">
       <div >
-        <div className="d-flex flex-wrap align-items-center justify-content-around ">
-           NC <span className="text-warning">NEWS</span>
+        <div >
+           Danial <span className="text-warning">NEWS</span> 
 
-          <form className="search" role="search">
+          <form className="search-box" role="search">
             <input
               type="search"
-              className=""
+              className="search-box"
               placeholder="Search..."
               aria-label="Search"
             />
           </form>
 
-          <div className="text-end">
-            <button type="button" className="btn btn-outline-light me-2">
+          <div className="button">
+            <button type="button-item"  className="button-item">
               Home
             </button>
-            <button type="button" className="btn btn-warning">
+            <button type="button-item" className="button-item">
              About
             </button>
           </div>

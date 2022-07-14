@@ -10,10 +10,8 @@ const Article = () => {
 
   useEffect(() => {
     axios
-      .get(`https://danialnews.herokuapp.com/api/articles/${id}`)
+      .get(`https://danial-news-app.herokuapp.com/api/articles/${id}`)
       .then((response) => {
-      
-        console.log(response.data)
         setArticle(response.data);
         isLoading(false)
       })
@@ -28,14 +26,14 @@ const Article = () => {
   }
   return (
     <>
-    <div className='articleList'>
+    <div className="article-box">
    
-        <div>title: {article.title}</div>
-        <div>Topic: {article.topic}</div>
-        <div >Description: {article.body}</div>
-        <div>Author: {article.author}</div>
-        <div>Votes: {article.votes}</div>
-        <div>Created date: {article.created_at}</div>
+        <div className="article-item">title: {article.title}</div>
+        <div className="article-item">Topic: {article.topic}</div>
+        <div className="article-item">Description: {article.body}</div>
+        <div className="article-item">Author: {article.author}</div>
+        <div className="article-item">Votes: {article.votes}</div>
+       
     </div>
     </>
   )

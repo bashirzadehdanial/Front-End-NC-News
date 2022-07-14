@@ -5,8 +5,11 @@ import Navbar from "./Components/Navbar";
 import Articles from "./Components/Articles";
 import Article from "./Components/Article";
 import Topics from "./Components/Topics";
+import HomePage from "./Components/HomePage";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+
 
 function App() {
   return (
@@ -14,6 +17,7 @@ function App() {
       <Header />
       <Navbar />
       <Routes>
+        <Route path="/" element={<HomePage/>} />
         <Route path="/articles" element={<Articles />} />
         <Route path="/articles/:id" element={<Article />} />
         <Route path="/topics" element={<Topics />} />

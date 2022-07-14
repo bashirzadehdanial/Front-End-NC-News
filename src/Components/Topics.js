@@ -7,7 +7,7 @@ const Topics = () => {
   const [loading, isLoading] = useState(true);
 
   useEffect(() => {
-    axios("https://danialnews.herokuapp.com/api/topics")
+    axios("https://danial-news-app.herokuapp.com/api/topics")
       .then((response) => {
         setTopics(response.data.topics);
         isLoading(false);
@@ -22,10 +22,10 @@ const Topics = () => {
   }
   return (
     <>
-      <div className="articlesList">
-        {topics.map((article, index) => (
-          <Link to={`/topics/${article.slug}`}>
-            <div className="article" key={index}>{article.slug}</div>
+      <div className="">
+        {topics.map((topic, index) => (
+          <Link to={`/topics/${topic.slug}`}>
+            <div className="" key={index}>{topic.slug}</div>
           </Link>
         ))}
       </div>

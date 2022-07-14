@@ -1,26 +1,27 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import "../App.css"
 
 const Navbar = () => {
   const [topics, setTopics] = useState([]);
 
   useEffect(() => {
-    axios(`https://danialnews.herokuapp.com/api/topics`)
+    axios(`https://danial-news-app.herokuapp.com/api/topics`)
       .then((res) => setTopics(res.data.topics))
       .catch((error) => console.log(error));
   }, []);
 
   return (
-    <div className="nav">
-      <div className="nav d-flex justify-content-center  ">
-        {topics.map((item,index) => (
-          <Link to={`/articles?topic=${item.slug}`} className="listItem">
+    
+      <div className="navbar-list">
+        {topics.map((item) => (
+          <div className="list-item"><Link className="list-item-item"  to={`/articles?topic=${item.slug}`} >
             {item.slug}
-            </Link>
+            </Link></div>
         ))}
       </div>
-    </div>
+  
     
   );
 };

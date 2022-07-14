@@ -8,26 +8,25 @@ const Articles = () => {
   const [loading, isLoading] = useState(true);
   const search = useLocation().search;
   const topic = new URLSearchParams(search).get('topic');
-  const [topicQuery, settopicQuery] = useState(null)
+  const [topicQuery, settopicQuery] = useState()
 
 
   let url;
+
   useEffect(()=>{
     settopicQuery(topic)
   })
   
   useEffect(() => {
     if(topic){
-      url = `https://danialnews.herokuapp.com/api/articles?topic=${topic}`
+      url = `https://danial-news-app.herokuapp.com/api/articles?topic=${topic}`
     }else{
-      url=`https://danialnews.herokuapp.com/api/articles`
+      url=`https://danial-news-app.herokuapp.com/api/articles`
     }
 
     axios
       (url)
       .then((response) => {
-      
-        
         setArticles(response.data.articles);
         isLoading(false)
       })
@@ -41,13 +40,12 @@ const Articles = () => {
   }
   return (
     <>
-    <div classtopic="articles">
+    <div className="articles">
       {
-       articles.map(article=>
-       <Link classtopic="article" to={`/articles/${article.article_id}`}>
-            <div  classtopic="articleList">Topic: {article.topic}</div><br/>
-            <div classtopic="articleList">Article: {article.title}</div>
-
+       articles.map((article, index)=>
+       <Link className="articles-item" to={`/articles/${article.article_id}`}>
+            <div className="articles-item1"  key={index}><span className="text-warning">Topic: </span> {article.topic}</div>
+            <div className="articles-item2" key={index}><span className="text-warning2">Article: </span > {article.title}</div>
        </Link>)
       }
       </div>
