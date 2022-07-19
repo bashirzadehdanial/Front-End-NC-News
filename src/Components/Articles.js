@@ -40,11 +40,13 @@ const Articles = () => {
   }
   return (
     <>
+    <div className="list-title"> {(articles[0].topic)}</div>
     <div className="articles">
       {
+       
        articles.map((article, index)=>
        <Link className="articles-item" to={`/articles/${article.article_id}`}>
-            <div className="articles-item1"  key={index}><span className="text-warning">Topic: </span> {article.topic}</div>
+            
             <div className="articles-item2" key={index}><span className="text-warning2">Article: </span > {article.title}</div>
        </Link>)
       }
